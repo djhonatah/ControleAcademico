@@ -1,0 +1,18 @@
+1.Implemente, em java, um sistema para o controle acadêmico simplificado. O sistema deve informar:
+a.Quais disciplinas um professor está ministrando;
+b.Qual o horário de um professor;
+c.Quais os alunos de uma dada disciplina;
+d.Quais as disciplinas de um aluno;
+e.Qual o horário de um aluno;
+f.Qual o número de alunos de uma disciplina.
+
+Sugestões pré-implementação (atividade de análise):
+▪Identifique as entidades do sistema
+▪Identifique as características de cada uma das entidades
+▪Elabore um diagrama para definir os relacionamentos entre as entidades
+▪Analise quem é o expert para cada situação listada acima e acrescente as responsabilidades ao diagrama
+
+ENTIDADES:
+- Professor 
+- Aluno 
+- Disciplina 
