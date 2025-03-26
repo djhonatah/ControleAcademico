@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Aluno {
- public String nome;
+    public String nome;
     private Integer num_matricula;
     private Double CRA;
     private List<Disciplina> disciplinas;
@@ -39,7 +39,6 @@ public class Aluno {
         return Horarios;
     }
 
-
     public List<Disciplina> getDisciplinas() {
         return disciplinas;
     }
@@ -58,7 +57,7 @@ public class Aluno {
         return nota/notas.size();
     }
 
-   public double calculoCra() {
+    public double calculoCra() {
     double numerador = 0.0;
     double denominador = 0.0;
 
