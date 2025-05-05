@@ -27,7 +27,7 @@ public class Controle {
     }
 
     //Métodos - Funcionario
-     public ArrayList<Funcionario> getFuncionarios() {
+        public ArrayList<Funcionario> getFuncionarios() {
         return this.listFuncionarios;
     }
 
