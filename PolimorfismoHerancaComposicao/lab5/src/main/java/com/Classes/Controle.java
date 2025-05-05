@@ -18,6 +18,7 @@ import com.PapeisPackage.Diretor;
 import com.PapeisPackage.Roteirista;
 
 public class Controle {
+    //AGREGAÇÃO 
     private final ArrayList<Funcionario> listFuncionarios;
     private final ArrayList<Filme> listFilmes;
 
@@ -35,7 +36,8 @@ public class Controle {
         verificarExistenciaFuncionario(nome);
         Random random = new Random();
         int numero = 100000 + random.nextInt(900000);
-    
+        
+        //ASSOCIAÇÃO
         Funcionario funcionario = new Funcionario(nome,numero);
         this.listFuncionarios.add(funcionario);
         return funcionario;

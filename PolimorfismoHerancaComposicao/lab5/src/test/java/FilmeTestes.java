@@ -45,7 +45,7 @@ public class FilmeTestes {
     void testAddEnvolvido() {
         Filme filme = new Filme("Inception", "2010");
         Funcionario funcionario = new Funcionario("Leonardo", 123456);
-        PapelInterface papel = new Ator(); // Supondo que Ator implementa PapelInterface
+        PapelInterface papel = new Ator(); //  Ator implementa PapelInterface
 
         filme.addEnvolvido(papel, funcionario);
         ArrayList<PapelFuncionario> envolvidos = filme.getEnvolvidos();
