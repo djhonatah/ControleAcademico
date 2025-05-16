@@ -6,7 +6,6 @@ import figuras.Figura;
 public class Main {
     public static void main(String[] args) {
         FabricaFiguras fabrica = FabricaFiguras.getInstancia();
-
         Figura circulo1 = fabrica.CreateCirculo();
         Figura triangulo1 = fabrica.CreateTrianguloIsosceles();
         Figura triangulo2 = fabrica.CreateTrianguloEquilatero();
@@ -20,5 +19,6 @@ public class Main {
         triangulo3.desenhar();
         quadrado1.desenhar();
         quadrado2.desenhar();
+        
     }
 }
