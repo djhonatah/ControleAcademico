@@ -13,6 +13,19 @@ public class MapListAdapter implements InterfaceList, InterfaceMap {
         this.map = map;
     }
 
+    // Exceções internas
+    public static class InvalidIndexException extends RuntimeException {
+        public InvalidIndexException(String message) {
+            super(message);
+        }
+    }
+
+    public static class NullKeyException extends RuntimeException {
+        public NullKeyException(String message) {
+            super(message);
+        }
+    }
+
     // Métodos da InterfaceList
     @Override
     public void add(String value) {
@@ -31,6 +44,9 @@ public class MapListAdapter implements InterfaceList, InterfaceMap {
 
     @Override
     public String get(int index) {
+        if (index < 0 || index >= map.size()) {
+            throw new InvalidIndexException("Índice inválido: " + index);
+        }
         return map.get(index);
     }
 
@@ -65,9 +81,12 @@ public class MapListAdapter implements InterfaceList, InterfaceMap {
         return map.values().toArray();
     }
 
-    // Métodos da InterfaceMap (se quiser reutilizar o mesmo adaptador pros dois sentidos)
+    // Métodos da InterfaceMap
     @Override
     public void put(Integer key, String value) {
+        if (key == null) {
+            throw new NullKeyException("Chave nula não é permitida.");
+        }
         map.put(key, value);
     }
 
@@ -88,6 +107,9 @@ public class MapListAdapter implements InterfaceList, InterfaceMap {
 
     @Override
     public void remove(Integer key) {
+        if (key == null) {
+            throw new NullKeyException("Chave nula não é permitida.");
+        }
         map.remove(key);
     }
 

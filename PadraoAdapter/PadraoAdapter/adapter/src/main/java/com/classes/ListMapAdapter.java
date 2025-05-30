@@ -12,8 +12,24 @@ public class ListMapAdapter implements InterfaceMap {
         this.list = list;
     }
 
+    // Exceções internas
+    public static class NullKeyException extends RuntimeException {
+        public NullKeyException(String message) {
+            super(message);
+        }
+    }
+
+    public static class InvalidKeyException extends RuntimeException {
+        public InvalidKeyException(String message) {
+            super(message);
+        }
+    }
+
     @Override
     public void put(Integer key, String value) {
+        if (key == null) throw new NullKeyException("Chave nula não é permitida.");
+        if (key < 0) throw new InvalidKeyException("Chave negativa não é permitida: " + key);
+
         while (list.size() <= key) {
             list.add(null);
         }
@@ -22,6 +38,8 @@ public class ListMapAdapter implements InterfaceMap {
 
     @Override
     public String get(Integer key) {
+        if (key == null) throw new NullKeyException("Chave nula não é permitida.");
+        if (key < 0) throw new InvalidKeyException("Chave negativa não é permitida: " + key);
         if (key < list.size()) {
             return list.get(key);
         }
@@ -30,6 +48,7 @@ public class ListMapAdapter implements InterfaceMap {
 
     @Override
     public boolean containsKey(Integer key) {
+        if (key == null || key < 0) return false;
         return key < list.size() && list.get(key) != null;
     }
 
@@ -40,6 +59,8 @@ public class ListMapAdapter implements InterfaceMap {
 
     @Override
     public void remove(Integer key) {
+        if (key == null) throw new NullKeyException("Chave nula não é permitida.");
+        if (key < 0) throw new InvalidKeyException("Chave negativa não é permitida: " + key);
         if (key < list.size()) {
             list.set(key, null);
         }
